@@ -1,1 +1,133 @@
+MỞ ĐẦU
 
+Nêu bối cảnh thực tế, vấn đề cần giải quyết và lý do lựa chọn đề tài xây dựng website quản lý và đặt phòng khách sạn.
+
+Tóm tắt mục tiêu, phạm vi, phương pháp thực hiện và cấu trúc của báo cáo.
+
+CHƯƠNG 1. TỔNG QUAN ĐỀ TÀI VÀ CƠ SỞ THỰC HIỆN
+
+1.1. Bối cảnh và lý do lựa chọn đề tài
+
+Giới thiệu nhu cầu đặt phòng khách sạn trực tuyến hiện nay.
+
+Những hạn chế trong việc quản lý phòng và đặt phòng theo phương pháp truyền thống.
+
+Sự cần thiết của hệ thống quản lý và đặt phòng khách sạn trực tuyến.
+
+1.2. Mục tiêu của đề tài
+
+Xây dựng website hỗ trợ khách hàng tìm kiếm và đặt phòng khách sạn.
+
+Hỗ trợ nhân viên/quản trị viên quản lý phòng, khách hàng và đơn đặt phòng.
+
+Giảm thời gian xử lý và nâng cao hiệu quả quản lý.
+
+1.3. Đối tượng sử dụng, phạm vi và giới hạn
+
+Xác định các nhóm người dùng: khách hàng, nhân viên và quản trị viên.
+
+Các chức năng thực hiện trong đồ án và các chức năng chưa triển khai.
+
+1.4. Dữ liệu đầu vào, đầu ra và các ràng buộc
+
+Dữ liệu khách hàng, phòng, loại phòng, đặt phòng và thanh toán.
+
+Các ràng buộc về phòng trống, ngày nhận/trả phòng và số lượng khách.
+
+1.5. Cơ sở lý thuyết, công nghệ và công cụ
+
+Trình bày kiến thức, framework/ngôn ngữ lập trình, cơ sở dữ liệu và công cụ phát triển sử dụng.
+
+CHƯƠNG 2. PHÂN TÍCH VÀ THIẾT KẾ GIẢI PHÁP
+
+2.1. Phân tích yêu cầu
+
+Lập bảng yêu cầu chức năng và phi chức năng.
+
+Xác định tác nhân và quyền của từng nhóm người dùng.
+
+Phân tích các nghiệp vụ chính của hệ thống.
+
+2.2. Use Case/luồng nghiệp vụ
+
+Xây dựng Use Case tổng quát.
+
+Đặc tả khoảng 4–6 Use Case cốt lõi.
+
+Bổ sung Activity Diagram/Sequence Diagram cho các nghiệp vụ quan trọng.
+
+Gợi ý: Đăng ký/đăng nhập; Tìm kiếm phòng; Xem phòng; Đặt phòng; Thanh toán; Quản lý đặt phòng.
+
+2.3. Kiến trúc hệ thống
+
+Mô hình Frontend – Backend – Cơ sở dữ liệu.
+
+Phân chia các module chính và mô tả luồng trao đổi dữ liệu.
+
+2.4. Thiết kế cơ sở dữ liệu
+
+Xây dựng mô hình ERD, xác định bảng chính, khóa chính/khóa ngoại và quan hệ.
+
+Thiết kế dữ liệu mẫu.
+
+Bảng dự kiến: Người dùng, Khách hàng, Loại phòng, Phòng, Đặt phòng, Chi tiết đặt phòng, Thanh toán, Đánh giá.
+
+2.5. Thiết kế giao diện và chức năng
+
+Wireframe các màn hình chính, giao diện website và giao diện quản trị.
+
+Phân quyền và validation dữ liệu.
+
+CHƯƠNG 3. XÂY DỰNG SẢN PHẨM, KIỂM THỬ VÀ ĐÁNH GIÁ
+
+3.1. Xây dựng và triển khai
+
+Môi trường phát triển, cấu trúc source code và các module.
+
+Kết nối cơ sở dữ liệu và xây dựng giao diện người dùng/quản trị.
+
+Minh họa kết quả chạy trên dữ liệu mẫu.
+
+3.2. Kiểm thử và đánh giá
+
+Lập tối thiểu 10–15 test case cho các chức năng cốt lõi, gồm dữ liệu đúng/sai/biên.
+
+Ghi kết quả mong đợi, kết quả thực tế, trạng thái Pass/Fail và lỗi đã sửa.
+
+Gợi ý: Đăng nhập; Đăng ký; Tìm kiếm phòng; Đặt phòng; Kiểm tra phòng đã đặt; Hủy; Thanh toán; CRUD phòng; Quản lý đơn.
+
+3.3. Giải pháp cải tiến kỹ thuật
+
+Chọn ít nhất 01 vấn đề kỹ thuật và trình bày trước – sau cải tiến hoặc minh chứng hiệu quả.
+
+Gợi ý: tối ưu tìm kiếm phòng trống; kiểm tra trùng lịch; validation; tối ưu truy vấn CSDL; phân quyền; tốc độ tải trang.
+
+3.4. Quản trị tự học và phát triển
+
+Nêu công nghệ/kiến thức đã tự học, tài liệu tham khảo, cách áp dụng và kế hoạch tiếp tục hoàn thiện.
+
+3.5. Kết quả đạt được và hạn chế
+
+Đối chiếu từng mục tiêu ban đầu với chức năng/kết quả hoàn thành.
+
+Nêu chức năng chưa hoàn thiện, nguyên nhân và hướng khắc phục.
+
+KẾT LUẬN
+
+Tổng kết kết quả đạt được và đánh giá khả năng ứng dụng của website.
+
+Nêu kiến thức, kỹ năng đạt được, hạn chế và định hướng phát triển.
+
+TÀI LIỆU THAM KHẢO
+
+Tài liệu về HTML/CSS/JavaScript, framework/backend, cơ sở dữ liệu và UML.
+
+Các tài liệu, website tham khảo phục vụ quá trình thực hiện.
+
+PHỤ LỤC
+
+Một số đoạn mã nguồn quan trọng.
+
+Database và các biểu đồ UML.
+
+Hình ảnh giao diện và bảng test case đầy đủ.
