@@ -44,8 +44,8 @@
 | Checkpoint | Nội dung | Trạng thái |
 |---|---|---|
 | CP1. Đăng ký đề tài | Tên đề tài, mục tiêu, phạm vi, công nghệ dự kiến | Hoàn thành |
-| CP2. Phân tích | Yêu cầu nghiệp vụ, use case, dữ liệu, ràng buộc | Đang thực hiện |
-| CP3. Thiết kế | Kiến trúc, CSDL, UI/UX | ⏳ Chưa làm |
+| CP2. Phân tích | Yêu cầu nghiệp vụ, use case, dữ liệu, ràng buộc | Hoàn thành |
+| CP3. Thiết kế | Kiến trúc, CSDL, UI/UX | Hoàn thành |
 | CP4. Triển khai | Lập trình chức năng cốt lõi | ⏳ Chưa làm |
 | CP5. Kiểm thử | Test case, sửa lỗi, tối ưu | ⏳ Chưa làm |
 | CP6. Báo cáo & Demo | Báo cáo cuối, source code, video demo | ⏳ Chưa làm |
