@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-white/50">
-          <p>© 2025 Luxoria Hotel & Resort. All Rights Reserved.</p>
+          <p>© 2025 Kensington Hotels. All Rights Reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-gold-400 transition">Chính sách bảo mật</a>
             <a href="#" className="hover:text-gold-400 transition">Điều khoản sử dụng</a>

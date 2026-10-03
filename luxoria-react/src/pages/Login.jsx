@@ -35,7 +35,7 @@ export default function Login() {
     <div className="min-h-[70vh] flex items-center justify-center px-4 py-12">
       <div className="bg-white rounded-2xl shadow-sm p-8 w-full max-w-md">
         <h1 className="font-display text-2xl text-center mb-1">Đăng nhập</h1>
-        <p className="text-sm text-navy-700/60 text-center mb-6">Chào mừng trở lại HotelBook</p>
+        <p className="text-sm text-navy-700/60 text-center mb-6">Chào mừng trở lại Kensington</p>
 
         {location.state?.from && (
           <p className="text-sm text-amber-700 bg-amber-50 rounded-lg px-3 py-2 mb-4 text-center">

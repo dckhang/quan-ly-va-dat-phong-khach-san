@@ -32,7 +32,7 @@ export default function Home() {
           style={{ backgroundImage: "url(https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1600)" }} />
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4 max-w-2xl leading-tight">
-            Hệ thống đặt phòng 6 chi nhánh HotelBook
+            Hệ thống đặt phòng 6 chi nhánh Kensington
           </h1>
           <p className="text-white/80 text-lg mb-10 max-w-xl">
             Đà Nẵng · Nha Trang · Phú Quốc · Hà Nội · Đà Lạt · Sapa
@@ -80,7 +80,7 @@ export default function Home() {
         <div className="flex items-end justify-between mb-8">
           <div>
             <p className="text-gold-500 text-sm tracking-widest uppercase mb-1">Chi nhánh</p>
-            <h2 className="font-display text-3xl md:text-4xl text-navy-900">6 chi nhánh HotelBook</h2>
+            <h2 className="font-display text-3xl md:text-4xl text-navy-900">6 chi nhánh Kensington</h2>
           </div>
           <Link to="/search" className="text-sm font-medium text-gold-600 hover:underline hidden sm:inline">Xem tất cả →</Link>
         </div>

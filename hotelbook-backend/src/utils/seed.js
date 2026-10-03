@@ -29,7 +29,7 @@ const seed = async () => {
   const branches = [
     // ===== ĐÀ NẴNG: 2 chi nhánh =====
     {
-      name: "HotelBook Đà Nẵng – Sơn Trà (Mỹ Khê)",
+      name: "Kensington Đà Nẵng – Sơn Trà (Mỹ Khê)",
       address: "Số 15 Đường Võ Nguyên Giáp, Phường Phước Mỹ, Quận Sơn Trà, TP. Đà Nẵng",
       district: "Sơn Trà", ward: "Phước Mỹ", city: "Đà Nẵng", province: "Đà Nẵng",
       latitude: 16.0599, longitude: 108.2442,
@@ -44,7 +44,7 @@ const seed = async () => {
       ],
     },
     {
-      name: "HotelBook Đà Nẵng – Ngũ Hành Sơn",
+      name: "Kensington Đà Nẵng – Ngũ Hành Sơn",
       address: "Số 88 Đường Trường Sa, Phường Hòa Hải, Quận Ngũ Hành Sơn, TP. Đà Nẵng",
       district: "Ngũ Hành Sơn", ward: "Hòa Hải", city: "Đà Nẵng", province: "Đà Nẵng",
       latitude: 15.9889, longitude: 108.2667,
@@ -60,7 +60,7 @@ const seed = async () => {
     },
     // ===== NHA TRANG: 2 chi nhánh =====
     {
-      name: "HotelBook Nha Trang – Trần Phú",
+      name: "Kensington Nha Trang – Trần Phú",
       address: "Số 78 Đường Trần Phú, Phường Lộc Thọ, TP. Nha Trang, Khánh Hòa",
       district: "Nha Trang", ward: "Lộc Thọ", city: "Nha Trang", province: "Khánh Hòa",
       latitude: 12.2388, longitude: 109.1967,
@@ -75,7 +75,7 @@ const seed = async () => {
       ],
     },
     {
-      name: "HotelBook Nha Trang – Bãi Dài",
+      name: "Kensington Nha Trang – Bãi Dài",
       address: "Khu du lịch Bãi Dài, Xã Cam Hải Đông, Huyện Cam Lâm, Khánh Hòa",
       district: "Cam Lâm", ward: "Cam Hải Đông", city: "Nha Trang", province: "Khánh Hòa",
       latitude: 12.0167, longitude: 109.2167,
@@ -91,7 +91,7 @@ const seed = async () => {
     },
     // ===== PHÚ QUỐC: 2 chi nhánh =====
     {
-      name: "HotelBook Phú Quốc – Bãi Sao",
+      name: "Kensington Phú Quốc – Bãi Sao",
       address: "Tổ 5, Ấp Bãi Sao, Xã Hàm Ninh, Thành phố Phú Quốc, Kiên Giang",
       district: "Phú Quốc", ward: "Hàm Ninh", city: "Phú Quốc", province: "Kiên Giang",
       latitude: 10.2167, longitude: 104.0167,
@@ -106,7 +106,7 @@ const seed = async () => {
       ],
     },
     {
-      name: "HotelBook Phú Quốc – Dương Đông",
+      name: "Kensington Phú Quốc – Dương Đông",
       address: "Số 45 Đường Trần Hưng Đạo, Dương Đông, Thành phố Phú Quốc, Kiên Giang",
       district: "Phú Quốc", ward: "Dương Đông", city: "Phú Quốc", province: "Kiên Giang",
       latitude: 10.2270, longitude: 103.9670,
@@ -122,7 +122,7 @@ const seed = async () => {
     },
     // ===== HÀ NỘI: 2 chi nhánh =====
     {
-      name: "HotelBook Hà Nội – Hoàn Kiếm (Phố cổ)",
+      name: "Kensington Hà Nội – Hoàn Kiếm (Phố cổ)",
       address: "Số 22 Phố Hàng Bông, Phường Hàng Bông, Quận Hoàn Kiếm, Hà Nội",
       district: "Hoàn Kiếm", ward: "Hàng Bông", city: "Hà Nội", province: "Hà Nội",
       latitude: 21.0285, longitude: 105.8489,
@@ -137,7 +137,7 @@ const seed = async () => {
       ],
     },
     {
-      name: "HotelBook Hà Nội – Cầu Giấy",
+      name: "Kensington Hà Nội – Cầu Giấy",
       address: "Số 120 Đường Xuân Thủy, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Hà Nội",
       district: "Cầu Giấy", ward: "Dịch Vọng Hậu", city: "Hà Nội", province: "Hà Nội",
       latitude: 21.0367, longitude: 105.7820,
@@ -153,7 +153,7 @@ const seed = async () => {
     },
     // ===== ĐÀ LẠT: 1 =====
     {
-      name: "HotelBook Đà Lạt – Hồ Xuân Hương",
+      name: "Kensington Đà Lạt – Hồ Xuân Hương",
       address: "Số 5 Đường Trần Quốc Toản, Phường 1, TP. Đà Lạt, Lâm Đồng",
       district: "Đà Lạt", ward: "Phường 1", city: "Đà Lạt", province: "Lâm Đồng",
       latitude: 11.9404, longitude: 108.4583,
@@ -169,7 +169,7 @@ const seed = async () => {
     },
     // ===== SAPA: 1 =====
     {
-      name: "HotelBook Sapa – Fansipan View",
+      name: "Kensington Sapa – Fansipan View",
       address: "Số 12 Đường Đồng Tuyển, Thị trấn Sa Pa, Huyện Sa Pa, Lào Cai",
       district: "Sa Pa", ward: "Thị trấn Sa Pa", city: "Sapa", province: "Lào Cai",
       latitude: 22.3364, longitude: 103.8439,

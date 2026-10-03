@@ -64,7 +64,7 @@ export default function AdminHotels() {
 
       {showForm && (
         <form onSubmit={handleAdd} className="bg-white rounded-xl p-5 shadow-sm mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <input required placeholder="Tên chi nhánh (vd: HotelBook Đà Nẵng)" value={form.name}
+          <input required placeholder="Tên chi nhánh (vd: Kensington Đà Nẵng)" value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
             className="border rounded-lg px-3 py-2 text-sm outline-none focus:border-gold-400" />
           <select required value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })}

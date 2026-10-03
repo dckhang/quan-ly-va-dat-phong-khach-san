@@ -15,7 +15,7 @@ export default function MainLayout() {
               <span className="font-display text-gold-400 text-lg font-bold">H</span>
             </div>
             <div>
-              <div className="font-display text-base tracking-wide leading-none">HOTELBOOK</div>
+              <div className="font-display text-base tracking-wide leading-none">KENSINGTON</div>
               <div className="text-[9px] tracking-[0.2em] text-gold-400 uppercase">Booking Platform</div>
             </div>
           </Link>
@@ -89,7 +89,7 @@ export default function MainLayout() {
       <footer className="bg-navy-900 text-white mt-auto">
         <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="font-display text-lg mb-2">HOTELBOOK</div>
+            <div className="font-display text-lg mb-2">KENSINGTON</div>
             <p className="text-white/60 text-sm">Nền tảng tìm kiếm và đặt phòng khách sạn trực tuyến hàng đầu.</p>
           </div>
           <div>
@@ -102,12 +102,12 @@ export default function MainLayout() {
           </div>
           <div>
             <h4 className="font-semibold mb-3 text-sm tracking-wide">LIÊN HỆ</h4>
-            <p className="text-sm text-white/60">Email: support@hotelbook.vn</p>
+            <p className="text-sm text-white/60">Email: support@kensington.vn</p>
             <p className="text-sm text-white/60">Hotline: 1900 1234</p>
           </div>
         </div>
         <div className="border-t border-white/10 text-center text-xs text-white/40 py-4">
-          © 2025 HotelBook. Đồ án tốt nghiệp.
+          © 2025 Kensington. Đồ án tốt nghiệp.
         </div>
       </footer>
     </div>
