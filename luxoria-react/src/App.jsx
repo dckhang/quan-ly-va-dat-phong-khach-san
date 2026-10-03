@@ -18,6 +18,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard"
 import AdminHotels from "./pages/admin/AdminHotels"
 import AdminRooms from "./pages/admin/AdminRooms"
 import AdminUsers from "./pages/admin/AdminUsers"
+import AdminBookings from "./pages/admin/AdminBookings"
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="hotels" element={<AdminHotels />} />
           <Route path="rooms" element={<AdminRooms />} />
           <Route path="users" element={<AdminUsers />} />
+          <Route path="bookings" element={<AdminBookings />} />
         </Route>
       </Routes>
     </BrowserRouter>
