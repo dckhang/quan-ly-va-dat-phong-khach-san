@@ -1,6 +1,7 @@
 import { Outlet, Link } from "react-router-dom"
 import { useState } from "react"
 import { useAuth } from "../context/AuthContext"
+import FloatingContact from "../components/FloatingContact"
 
 export default function MainLayout() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -84,6 +85,7 @@ export default function MainLayout() {
 
       <main className="flex-1">
         <Outlet />
+      <FloatingContact />
       </main>
 
       <footer className="bg-navy-900 text-white mt-auto">

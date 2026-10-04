@@ -183,6 +183,39 @@ const seed = async () => {
         { name: "Family Cabin", price: 2000000, capacity: 4, size: "45 m²", count: 2, bedType: "2 giường đôi", view: "View núi", bathroom: "Phòng tắm rộng", description: "Cabin gia đình 3–4 người.", amenities: ["Wifi", "2 giường", "Máy sưởi"] },
       ],
     },
+
+    // ===== HỘI AN: 1 =====
+    {
+      name: "Kensington Hội An – Phố Cổ",
+      address: "Số 18 Đường Nguyễn Phúc Chu, Phường Minh An, TP. Hội An, Quảng Nam",
+      district: "Hội An", ward: "Minh An", city: "Hội An", province: "Quảng Nam",
+      latitude: 15.8801, longitude: 108.3380,
+      description: "Boutique gần phố cổ Hội An, cách chùa Cầu khoảng 5 phút đi bộ. Kiến trúc Á Đông, yên tĩnh.",
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800",
+      starRating: 4,
+      amenities: ["Wifi", "Hồ bơi", "Nhà hàng", "Xe đạp miễn phí", "Spa"],
+      phone: "0235 111 7001",
+      rooms: [
+        { name: "Heritage Room", price: 1600000, capacity: 2, size: "28 m²", count: 4, bedType: "1 giường đôi", view: "View vườn / phố", bathroom: "Vòi sen", description: "Phòng phong cách phố cổ, gần trung tâm.", amenities: ["Wifi", "Máy lạnh", "TV"] },
+        { name: "Lantern Suite", price: 2800000, capacity: 2, size: "40 m²", count: 2, bedType: "1 giường King", view: "View phố cổ", bathroom: "Bồn tắm", description: "Suite lãng mạn, ban công nhìn phố đèn lồng.", amenities: ["Wifi", "Ban công", "Bồn tắm"] },
+      ],
+    },
+    // ===== VŨNG TÀU: 1 =====
+    {
+      name: "Kensington Vũng Tàu – Bãi Sau",
+      address: "Số 25 Đường Thùy Vân, Phường 2, TP. Vũng Tàu, Bà Rịa - Vũng Tàu",
+      district: "Vũng Tàu", ward: "Phường 2", city: "Vũng Tàu", province: "Bà Rịa - Vũng Tàu",
+      latitude: 10.3350, longitude: 107.0920,
+      description: "Mặt tiền Bãi Sau, cách biển khoảng 100m. Phù hợp cuối tuần TP.HCM.",
+      image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800",
+      starRating: 4,
+      amenities: ["Hồ bơi", "Wifi", "Nhà hàng", "Gần biển", "Bãi đỗ xe"],
+      phone: "0254 111 8001",
+      rooms: [
+        { name: "Sea Breeze", price: 1400000, capacity: 2, size: "30 m²", count: 5, bedType: "1 giường đôi", view: "View biển / phố", bathroom: "Vòi sen", description: "Phòng gần biển Bãi Sau, tiện tắm biển.", amenities: ["Wifi", "Máy lạnh", "Gần biển"] },
+        { name: "Ocean Deluxe", price: 2400000, capacity: 3, size: "38 m²", count: 3, bedType: "1 giường King", view: "View biển Bãi Sau", bathroom: "Phòng tắm kính", description: "Ban công nhìn biển, minibar.", amenities: ["Wifi", "View biển", "Ban công", "Mini bar"] },
+      ],
+    },
   ];
 
   for (const b of branches) {
@@ -233,7 +266,7 @@ const seed = async () => {
   }
 
   console.log("✅ Seed thành công!");
-  console.log("Đà Nẵng: 2 chi nhánh | Nha Trang: 2 | Phú Quốc: 2 | Hà Nội: 2 | Đà Lạt: 1 | Sapa: 1");
+  console.log("12 chi nhánh: Đà Nẵng×2, Nha Trang×2, Phú Quốc×2, Hà Nội×2, Đà Lạt, Sapa, Hội An, Vũng Tàu");
   console.log("Admin: admin@hotel.com / 123456");
   console.log("Staff: staff@hotel.com / 123456");
   console.log("Customer: customer@gmail.com / 123456");
