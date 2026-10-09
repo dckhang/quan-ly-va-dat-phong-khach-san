@@ -5,10 +5,14 @@ import { api } from "../api/client"
 export default function Home() {
   const navigate = useNavigate()
   const [hotels, setHotels] = useState([])
+  const [featuredReviews, setFeaturedReviews] = useState([])
+  const [featuredArticles, setFeaturedArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState({ city: "", checkIn: "", checkOut: "", guests: 2 })
 
   useEffect(() => {
+    api.getFeaturedReviews().then((r) => setFeaturedReviews(r.data || [])).catch(() => {})
+    api.getArticles({ featured: "true", limit: "3" }).then((r) => setFeaturedArticles(r.data || [])).catch(() => {})
     api.getHotels()
       .then((res) => setHotels(res.data || []))
       .catch(() => setHotels([]))
@@ -112,6 +116,70 @@ export default function Home() {
           </div>
         )}
       </section>
+
+      {/* Đánh giá nổi bật */}
+      {featuredReviews.length > 0 && (
+        <section className="max-w-7xl mx-auto px-6 py-16">
+          <div className="text-center mb-10">
+            <p className="text-gold-500 text-sm tracking-widest uppercase mb-2">Cảm nhận khách hàng</p>
+            <h2 className="font-display text-3xl md:text-4xl text-navy-900">Đánh giá từ khách đã lưu trú</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredReviews.map((r) => (
+              <div key={r._id} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-50">
+                <div className="text-gold-400 text-sm mb-2">
+                  {"★".repeat(r.rating || 5)}
+                </div>
+                <p className="text-navy-800 text-sm leading-relaxed mb-4">
+                  "{r.comment || "Trải nghiệm tuyệt vời!"}"
+                </p>
+                <div className="flex items-center justify-between text-xs text-navy-700/60">
+                  <span className="font-medium text-navy-900">{r.userId?.fullName || "Khách"}</span>
+                  <span className="truncate max-w-[50%] text-right">{r.hotelId?.name || ""}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+
+      {/* Bài viết nổi bật */}
+      {featuredArticles.length > 0 && (
+        <section className="max-w-7xl mx-auto px-6 py-16 border-t border-gray-100">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-gold-500 text-sm tracking-widest uppercase mb-1">Journal</p>
+              <h2 className="font-display text-3xl md:text-4xl text-navy-900">Bài viết mới</h2>
+            </div>
+            <Link to="/blog" className="text-sm font-medium text-gold-600 hover:underline hidden sm:inline">
+              Xem tất cả →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featuredArticles.map((a) => (
+              <Link
+                key={a._id}
+                to={"/blog/" + a._id}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition group"
+              >
+                <div className="h-44 overflow-hidden">
+                  <img
+                    src={a.coverImage || "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600"}
+                    alt={a.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-lg text-navy-900 mb-2 line-clamp-2">{a.title}</h3>
+                  <p className="text-sm text-navy-700/70 line-clamp-2">{a.excerpt}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
     </div>
   )
 }

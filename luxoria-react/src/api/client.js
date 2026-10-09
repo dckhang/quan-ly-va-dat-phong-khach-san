@@ -72,12 +72,40 @@ export const api = {
     request(`/payments/${bookingId}/pay-deposit`, { method: "POST", body: JSON.stringify({ method }) }),
   payRemaining: (bookingId, method) =>
     request(`/payments/${bookingId}/pay-remaining`, { method: "POST", body: JSON.stringify({ method }) }),
+  confirmDeposit: (bookingId) =>
+    request(`/payments/${bookingId}/confirm-deposit`, { method: "PUT" }),
   getPayment: (bookingId) => request(`/payments/booking/${bookingId}`),
   getAllPayments: (params = {}) => {
     const q = new URLSearchParams(params).toString();
     return request(`/payments${q ? `?${q}` : ""}`);
   },
   refund: (id) => request(`/payments/${id}/refund`, { method: "PUT" }),
+
+
+  // Reviews
+  getReviews: (params = {}) => {
+    const q = new URLSearchParams(params).toString();
+    return request(`/reviews${q ? `?${q}` : ""}`);
+  },
+  createReview: (body) => request("/reviews", { method: "POST", body: JSON.stringify(body) }),
+  deleteReview: (id) => request(`/reviews/${id}`, { method: "DELETE" }),
+
+  // Articles / Blog
+  getArticles: (params = {}) => {
+    const q = new URLSearchParams(params).toString();
+    return request(`/articles${q ? `?${q}` : ""}`);
+  },
+  getArticle: (id) => request(`/articles/${id}`),
+  createArticle: (body) => request("/articles", { method: "POST", body: JSON.stringify(body) }),
+  updateArticle: (id, body) => request(`/articles/${id}`, { method: "PUT", body: JSON.stringify(body) }),
+  deleteArticle: (id) => request(`/articles/${id}`, { method: "DELETE" }),
+  getFeaturedReviews: () => request("/reviews?featured=true"),
+  getAllReviewsAdmin: (params = {}) => {
+    const q = new URLSearchParams(params).toString();
+    return request(`/reviews/admin/all${q ? `?${q}` : ""}`);
+  },
+  updateReviewAdmin: (id, body) =>
+    request(`/reviews/${id}`, { method: "PATCH", body: JSON.stringify(body) }),
 
   // Users
   getUsers: (params = {}) => {

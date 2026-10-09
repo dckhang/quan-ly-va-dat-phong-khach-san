@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { api, formatPrice } from "../api/client"
+import ReviewSection from "../components/ReviewSection"
 
 export default function HotelDetail() {
   const { id } = useParams()
@@ -184,6 +185,8 @@ export default function HotelDetail() {
         )}
 
         {/* Chi nhánh khác cùng thành phố – địa điểm khác */}
+        <ReviewSection target="hotel" targetId={hotel._id} title="Đánh giá chi nhánh" />
+
         {siblings.length > 0 && (
           <div>
             <h2 className="font-display text-2xl mb-2">

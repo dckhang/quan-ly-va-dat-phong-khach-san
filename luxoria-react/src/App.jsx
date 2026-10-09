@@ -9,6 +9,9 @@ import RoomDetail from "./pages/RoomDetail"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import MyBookings from "./pages/MyBookings"
+import About from "./pages/About"
+import Blog from "./pages/Blog"
+import ArticleDetail from "./pages/ArticleDetail"
 
 import StaffDashboard from "./pages/staff/StaffDashboard"
 import StaffBookings from "./pages/staff/StaffBookings"
@@ -19,6 +22,8 @@ import AdminHotels from "./pages/admin/AdminHotels"
 import AdminRooms from "./pages/admin/AdminRooms"
 import AdminUsers from "./pages/admin/AdminUsers"
 import AdminBookings from "./pages/admin/AdminBookings"
+import AdminReviews from "./pages/admin/AdminReviews"
+import AdminArticles from "./pages/admin/AdminArticles"
 
 function App() {
   return (
@@ -33,6 +38,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/my-bookings" element={<MyBookings />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<ArticleDetail />} />
         </Route>
 
         {/* Staff */}
@@ -49,6 +57,8 @@ function App() {
           <Route path="rooms" element={<AdminRooms />} />
           <Route path="users" element={<AdminUsers />} />
           <Route path="bookings" element={<AdminBookings />} />
+          <Route path="reviews" element={<AdminReviews />} />
+          <Route path="articles" element={<AdminArticles />} />
         </Route>
       </Routes>
     </BrowserRouter>

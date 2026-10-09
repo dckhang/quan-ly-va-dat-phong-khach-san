@@ -8,6 +8,8 @@ import roomRoutes from "./routes/roomRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import paymentRoutes from "./routes/paymentRoutes.js";
+import reviewRoutes from "./routes/reviewRoutes.js";
+import articleRoutes from "./routes/articleRoutes.js";
 
 const app = express();
 
@@ -22,6 +24,8 @@ app.use("/api/rooms", roomRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/payments", paymentRoutes);
+app.use("/api/reviews", reviewRoutes);
+app.use("/api/articles", articleRoutes);
 
 // Health check
 app.get("/api/health", (req, res) => {

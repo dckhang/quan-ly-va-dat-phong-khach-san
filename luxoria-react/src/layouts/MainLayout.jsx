@@ -24,6 +24,8 @@ export default function MainLayout() {
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link to="/" className="hover:text-gold-400 transition">Trang chủ</Link>
             <Link to="/search" className="hover:text-gold-400 transition">Tìm khách sạn</Link>
+            <Link to="/about" className="hover:text-gold-400 transition">Giới thiệu</Link>
+            <Link to="/blog" className="hover:text-gold-400 transition">Bài viết</Link>
             {isLoggedIn && user?.role === "customer" && (
               <Link to="/my-bookings" className="hover:text-gold-400 transition">Đơn của tôi</Link>
             )}
@@ -68,6 +70,8 @@ export default function MainLayout() {
           <div className="md:hidden bg-navy-800 px-4 py-3 space-y-2 text-sm">
             <Link to="/" className="block py-1" onClick={() => setMenuOpen(false)}>Trang chủ</Link>
             <Link to="/search" className="block py-1" onClick={() => setMenuOpen(false)}>Tìm khách sạn</Link>
+            <Link to="/about" className="block py-1" onClick={() => setMenuOpen(false)}>Giới thiệu</Link>
+            <Link to="/blog" className="block py-1" onClick={() => setMenuOpen(false)}>Bài viết</Link>
             {isLoggedIn && user?.role === "customer" && (
               <Link to="/my-bookings" className="block py-1" onClick={() => setMenuOpen(false)}>Đơn của tôi</Link>
             )}
@@ -98,6 +102,8 @@ export default function MainLayout() {
             <h4 className="font-semibold mb-3 text-sm tracking-wide">LIÊN KẾT</h4>
             <ul className="space-y-1.5 text-sm text-white/60">
               <li><Link to="/search" className="hover:text-gold-400">Tìm khách sạn</Link></li>
+              <li><Link to="/about" className="hover:text-gold-400">Giới thiệu</Link></li>
+              <li><Link to="/blog" className="hover:text-gold-400">Bài viết</Link></li>
               <li><Link to="/login" className="hover:text-gold-400">Đăng nhập</Link></li>
               <li><Link to="/register" className="hover:text-gold-400">Đăng ký</Link></li>
             </ul>

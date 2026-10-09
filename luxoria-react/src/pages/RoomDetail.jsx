@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom"
 import { api, formatPrice } from "../api/client"
 import { useAuth } from "../context/AuthContext"
+import ReviewSection from "../components/ReviewSection"
 
 export default function RoomDetail() {
   const { id } = useParams()
@@ -438,6 +439,12 @@ export default function RoomDetail() {
           </div>
         </div>
       </div>
+
+      {roomType && (
+        <div className="max-w-7xl mx-auto px-6 pb-12">
+          <ReviewSection target="roomType" targetId={roomType._id} title="Đánh giá loại phòng" />
+        </div>
+      )}
     </div>
   )
 }

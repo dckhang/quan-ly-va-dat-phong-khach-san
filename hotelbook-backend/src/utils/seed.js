@@ -9,6 +9,8 @@ import RoomType from "../models/RoomType.js";
 import Room from "../models/Room.js";
 import Booking from "../models/Booking.js";
 import Payment from "../models/Payment.js";
+import Review from "../models/Review.js";
+import Article from "../models/Article.js";
 
 const seed = async () => {
   await connectDB();
@@ -20,11 +22,27 @@ const seed = async () => {
     Room.deleteMany({}),
     Booking.deleteMany({}),
     Payment.deleteMany({}),
+    Review.deleteMany({}),
+    Article.deleteMany({}),
   ]);
 
   await User.create({ fullName: "Admin Hệ thống", email: "admin@hotel.com", password: "123456", phone: "0900000001", role: "admin" });
   await User.create({ fullName: "Nhân viên A", email: "staff@hotel.com", password: "123456", phone: "0900000002", role: "staff" });
-  await User.create({ fullName: "Nguyễn Văn Khách", email: "customer@gmail.com", password: "123456", phone: "0900000003", role: "customer" });
+  const customer = await User.create({ fullName: "Nguyễn Văn Khách", email: "customer@gmail.com", password: "123456", phone: "0900000003", role: "customer" });
+
+  // Thêm vài khách demo để seed đánh giá đa dạng
+  const reviewerData = [
+    { fullName: "Trần Minh Anh", email: "minhanh@gmail.com", password: "123456", phone: "0911000001", role: "customer" },
+    { fullName: "Lê Hoàng Nam", email: "hoangnam@gmail.com", password: "123456", phone: "0911000002", role: "customer" },
+    { fullName: "Phạm Thu Hà", email: "thuha@gmail.com", password: "123456", phone: "0911000003", role: "customer" },
+    { fullName: "Võ Đức Thành", email: "ducthanh@gmail.com", password: "123456", phone: "0911000004", role: "customer" },
+    { fullName: "Ngô Bảo Châu", email: "baochau@gmail.com", password: "123456", phone: "0911000005", role: "customer" },
+    { fullName: "Đặng Quỳnh Chi", email: "quynhchi@gmail.com", password: "123456", phone: "0911000006", role: "customer" },
+  ];
+  const reviewers = [];
+  for (const u of reviewerData) {
+    reviewers.push(await User.create(u));
+  }
 
   const branches = [
     // ===== ĐÀ NẴNG: 2 chi nhánh =====
@@ -218,6 +236,7 @@ const seed = async () => {
     },
   ];
 
+  const createdHotels = [];
   for (const b of branches) {
     const hotel = await Hotel.create({
       name: b.name,
@@ -263,7 +282,81 @@ const seed = async () => {
       }
       floor++;
     }
+    createdHotels.push(hotel);
   }
+
+  // ===== Đánh giá mẫu (tích cực, đưa lên trang chủ) =====
+  const reviewSamples = [
+    { user: reviewers[0], hotelIdx: 0, rating: 5, comment: "Phòng sạch sẽ, view biển đẹp, nhân viên nhiệt tình. Sẽ quay lại lần sau!" },
+    { user: reviewers[1], hotelIdx: 1, rating: 5, comment: "Vị trí thuận tiện, gần trung tâm. Bữa sáng ngon, giường êm ái." },
+    { user: reviewers[2], hotelIdx: 2, rating: 5, comment: "Không gian yên tĩnh, thiết kế tinh tế. Rất phù hợp nghỉ dưỡng cuối tuần." },
+    { user: reviewers[3], hotelIdx: 3, rating: 4, comment: "Giá hợp lý, phòng rộng rãi. Check-in nhanh, lễ tân hỗ trợ tốt." },
+    { user: reviewers[4], hotelIdx: 4, rating: 5, comment: "Trải nghiệm tuyệt vời! Hồ bơi đẹp, gần biển, dịch vụ chu đáo." },
+    { user: reviewers[5], hotelIdx: 5, rating: 5, comment: "Gia đình mình rất hài lòng. Phòng family tiện nghi, trẻ em thích không gian." },
+    { user: customer, hotelIdx: 6, rating: 4, comment: "Chi nhánh sạch sẽ, wifi mạnh, phù hợp công tác ngắn ngày." },
+    { user: reviewers[0], hotelIdx: 7, rating: 5, comment: "View đẹp, không khí trong lành. Đáng để trải nghiệm khi đến thành phố này." },
+  ];
+
+  for (const s of reviewSamples) {
+    const h = createdHotels[s.hotelIdx % createdHotels.length];
+    if (!h) continue;
+    await Review.create({
+      userId: s.user._id,
+      hotelId: h._id,
+      target: "hotel",
+      rating: s.rating,
+      comment: s.comment,
+      isFeatured: true,
+      isHidden: false,
+    });
+  }
+  console.log(`✅ Đã seed ${reviewSamples.length} đánh giá nổi bật cho trang chủ`);
+
+
+  // ===== Bài viết mẫu =====
+  await Article.insertMany([
+    {
+      title: "5 điểm đến biển đẹp nhất cùng Kensington hè này",
+      excerpt: "Từ Đà Nẵng, Nha Trang đến Phú Quốc và Vũng Tàu — gợi ý lịch trình nghỉ dưỡng biển cùng chuỗi Kensington.",
+      content: "Mùa hè là thời điểm lý tưởng để tận hưởng biển xanh, cát trắng. Chuỗi Kensington hiện diện tại nhiều điểm đến biển nổi bật của Việt Nam.\n\n1. Đà Nẵng – Mỹ Khê & Ngũ Hành Sơn: bãi biển đẹp, gần phố cổ Hội An.\n2. Nha Trang – Trần Phú & Bãi Dài: thành phố biển sôi động, nhiều hoạt động thể thao.\n3. Phú Quốc – Bãi Sao & Dương Đông: hoàng hôn trên đảo ngọc.\n4. Vũng Tàu – Bãi Sau: gần TP.HCM, phù hợp cuối tuần.\n\nĐặt phòng sớm trên hệ thống Kensington để giữ giá tốt và linh hoạt chọn chi nhánh.",
+      coverImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800",
+      category: "cam-nang",
+      authorName: "Kensington Travel",
+      isPublished: true,
+      isFeatured: true,
+    },
+    {
+      title: "Kinh nghiệm đặt phòng online: cọc 30% và nhận phòng an toàn",
+      excerpt: "Hiểu rõ quy trình đặt cọc, chờ duyệt và check-in giúp chuyến đi suôn sẻ hơn.",
+      content: "Khi đặt phòng trên Kensington, bạn chọn ngày nhận/trả, xem loại phòng còn trống rồi tạo đơn.\n\nHệ thống tính tiền cọc 30%. Sau khi chuyển khoản/quét QR, đơn ở trạng thái chờ nhân viên duyệt. Khi được duyệt, phòng được giữ chỗ.\n\nĐến ngày nhận phòng, mang theo giấy tờ tùy thân và mã đơn. Thanh toán phần còn lại khi trả phòng (hoặc theo hướng dẫn chi nhánh).\n\nMẹo: đặt trước mùa cao điểm, kiểm tra email/đơn của tôi để theo dõi trạng thái.",
+      coverImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800",
+      category: "cam-nang",
+      authorName: "Kensington Care",
+      isPublished: true,
+      isFeatured: true,
+    },
+    {
+      title: "Sapa và Đà Lạt: nghỉ núi mùa se lạnh cùng Kensington",
+      excerpt: "Hai điểm đến cao nguyên lý tưởng cho chuyến đi thư giãn, săn mây và thưởng thức không khí se lạnh.",
+      content: "Kensington Sapa – Fansipan View mang lại tầm nhìn núi non; Kensington Đà Lạt – Hồ Xuân Hương gần trung tâm thành phố ngàn hoa.\n\nGợi ý: mang áo ấm, đặt phòng view đẹp, kết hợp tour trekking hoặc săn mây buổi sớm.\n\nĐặt trước trên website để chọn đúng hạng phòng và ngày phù hợp lịch trình.",
+      coverImage: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800",
+      category: "tin-tuc",
+      authorName: "Kensington Travel",
+      isPublished: true,
+      isFeatured: true,
+    },
+    {
+      title: "Ưu đãi thành viên: tích điểm và ưu tiên giữ phòng",
+      excerpt: "Thông tin về chương trình khách hàng thân thiết và cách tận dụng khi đặt qua hệ thống.",
+      content: "Đăng ký tài khoản trên Kensington giúp bạn quản lý đơn đặt phòng, theo dõi trạng thái cọc và nhận thông tin ưu đãi theo mùa.\n\nTrong giai đoạn đồ án, các ưu đãi được mô phỏng; phiên bản sau có thể tích hợp tích điểm và mã giảm giá thật.\n\nHãy đăng nhập trước khi đặt để đơn được gắn với tài khoản của bạn.",
+      coverImage: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=800",
+      category: "uu-dai",
+      authorName: "Kensington",
+      isPublished: true,
+      isFeatured: false,
+    },
+  ]);
+  console.log("✅ Đã seed bài viết mẫu");
 
   console.log("✅ Seed thành công!");
   console.log("12 chi nhánh: Đà Nẵng×2, Nha Trang×2, Phú Quốc×2, Hà Nội×2, Đà Lạt, Sapa, Hội An, Vũng Tàu");

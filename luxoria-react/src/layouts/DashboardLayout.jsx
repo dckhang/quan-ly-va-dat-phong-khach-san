@@ -39,6 +39,8 @@ export default function DashboardLayout({ role = "admin" }) {
     { to: "/admin/rooms", label: "Quản lý phòng" },
     { to: "/admin/users", label: "Quản lý người dùng" },
     { to: "/admin/bookings", label: "Đơn đặt phòng" },
+    { to: "/admin/reviews", label: "Đánh giá" },
+    { to: "/admin/articles", label: "Bài viết" },
   ]
 
   const staffLinks = [
